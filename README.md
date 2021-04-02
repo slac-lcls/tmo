@@ -1,7 +1,7 @@
 # tmo
 Data analysis tools for the TMO instrument.
 ## Quick start
-The tmo repo hosts software tools for online and offline data analysis of [TMO](https://lcls.slac.stanford.edu/instruments/neh-1-1) experiments. These tools are facilitated by the [LCLS-II software](https://github.com/slac-lcls/lcls2), especially its psana library,  which is used to acquire and access the LCLS data, as well as to assist data analysis with dedicated algorithms. First-time psana users are recommended to go through 
-[this confluence page](https://confluence.slac.stanford.edu/display/LCLSIIData/psana) before using or contributing to the tmo scripts. 
+The tmo repo hosts software tools for online and offline data analysis of [TMO](https://lcls.slac.stanford.edu/instruments/neh-1-1) experiments. These tools are facilitated by the [LCLS-II software](https://github.com/slac-lcls/lcls2), especially its psana library,  which is used to acquire and access the LCLS data, as well as to assist data analysis with dedicated algorithms. Before using or contributing to the tmo scripts, First-time psana users are recommended to go through 
+[this confluence page](https://confluence.slac.stanford.edu/display/LCLSIIData/psana) and the two TMO-specific examples - [one] (https://github.com/slac-lcls/tmo/blob/main/ana/general/Analysis_Intro(dVMI).ipynb) for data analysis in [JupyterHub] (https://pswww.slac.stanford.edu/jupyterhub/hub/home) and [the other] (https://github.com/slac-lcls/tmo/blob/main/ana/general/preprocess_mpi.py) for data processing with MPI by submitting SLURM batch jobs. 
 
 The repo is structured into three spaces - [ana](https://github.com/slac-lcls/tmo/tree/main/ana) for both general and instrument-specific scripts, [mon](https://github.com/slac-lcls/tmo/tree/main/mon) for online data analysis and [utils](https://github.com/slac-lcls/tmo/tree/main/utils) for handy library functions.(to be continued...) 
