@@ -7,4 +7,4 @@
 #SBATCH --mail-user=xiangli@slac.stanford.edu
 #SBATCH --mail-type=FAIL,END 
 
-mpirun python PreProc.py
+mpirun python /cds/home/x/xiangli/tmo/ana/general/arp/PreProc.py

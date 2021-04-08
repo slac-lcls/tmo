@@ -89,8 +89,6 @@ class PreProc:
 
 if __name__ == "__main__":
     os.environ['PS_SRV_NODES']='1'
-  #  os.environ['EXPERIMENT']='tmolw5618'
-  #  os.environ['RUN_NUM']='48'
     exp = os.getenv('EXPERIMENT')
     run_num = os.getenv('RUN_NUM')
     params = {'exp':exp,'run_num':int(run_num),'refresh_num':100,'hdf5':'/reg/d/psdm/tmo/tmolw5618/results/xiangli/v_run_'}
