@@ -58,12 +58,18 @@ class PreProc:
                 wf_mcp = wfs[0][0].astype(np.float)
                 
                 if sinit == None:
-                    sevt_dict['tof'] = np.zeros_like(wf_mcp) 
+                    for nm in ['tof','tof_67','tof_68','tof_67n','tof_68n']:
+                        sevt_dict[nm] = np.zeros_like(wf_mcp) 
                     sinit = 1
 
                 
-
-                sevt_dict['tof'] += wf_mcp
+                if evt_dict['evt'][161]==0:
+                    if evt_dict['evt'][67]==1:
+                        sevt_dict['tof_67'] += wf_mcp
+                        sevt_dict['tof_67n'] += wf_mcp/evt_dict['xgmd']
+                    if evt_dict['evt'][68]==1:
+                        sevt_dict['tof_68'] += wf_mcp
+                        sevt_dict['tof_68n'] += wf_mcp/evt_dict['xgmd']
                 
                 smd.event(evt, evt_dict)                
 
@@ -75,17 +81,19 @@ class PreProc:
    
 
         if smd.summary:
-            smd.sum(sevt_dict['tof'])
+            for nm in ['tof','tof_67','tof_68','tof_67n','tof_68n']:
+                smd.sum(sevt_dict[nm])
+                
             smd.save_summary({'sig_sum':sevt_dict})
         smd.done()
 
 if __name__ == "__main__":
     os.environ['PS_SRV_NODES']='1'
-    os.environ['EXPERIMENT']='tmolw5618'
-    os.environ['RUN_NUM']='16'
+  #  os.environ['EXPERIMENT']='tmolw5618'
+  #  os.environ['RUN_NUM']='48'
     exp = os.getenv('EXPERIMENT')
     run_num = os.getenv('RUN_NUM')
-    params = {'exp':exp,'run_num':int(run_num),'refresh_num':100,'hdf5':'/reg/d/psdm/tmo/tmolw5618/results/xiangli/test_run','max_evt':100}
+    params = {'exp':exp,'run_num':int(run_num),'refresh_num':100,'hdf5':'/reg/d/psdm/tmo/tmolw5618/results/xiangli/v_run_'}
     print(params)
     prep = PreProc(params)
     prep.Process() 
