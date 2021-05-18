@@ -1,4 +1,4 @@
-import h5py
+import h5py,sys,argparse
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import ndimage
@@ -7,6 +7,17 @@ from scipy.ndimage import gaussian_filter
 from scipy.optimize import curve_fit as CF
 from scipy.fft import fft, fftfreq,ifft
 
+def config_name():
+
+    try:
+        parser = argparse.ArgumentParser()
+        parser.add_argument('-i', '--configf',help="configuration file name")
+        args = parser.parse_args()        
+        configf = args.configf
+    except Exception as err:
+        print(err+', usage: python *.py -i <configf>')
+        sys.exit(2)
+    return configf
 
 def deconv_f(dt,sig,imp,freq):
     sig1 = np.zeros([len(sig)+len(imp)-1])

@@ -21,7 +21,7 @@ def CallBack(evt_dict):
 
     img = Image(0,'atm',evt_dict['atm'])
     xy = XYPlot(0,'atm_proj',range(len(evt_dict['atm_proj'])),evt_dict['atm_proj'])
-    #publish.local = True
+    publish.local = True
     publish.send('ATM',img)
     publish.send('ATMP',xy)
     num += 1
