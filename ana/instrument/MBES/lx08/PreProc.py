@@ -56,6 +56,7 @@ for myrun in ds.runs():
     ts_p = None
 
     for nevt,evt in enumerate(myrun.events()):
+       # print('a:',nevt)
         
         tpks = np.array([np.nan]*maxNumPks)
         tpks_p = np.array([np.nan]*maxNumPks)        
@@ -64,26 +65,26 @@ for myrun in ds.runs():
         hpks_p = np.array([np.nan]*maxNumPks)
 
         # Machine data
-        evt_dict['evt'] = np.array(det_evt.raw.eventcodes(evt),dtype=np.int)
-        evt_dict['gmd'] = det_gmd.raw.energy(evt)
-        evt_dict['xgmd'] = det_xgmd.raw.energy(evt)
-        evt_dict['pho'] = det_ebm.raw.ebeamPhotonEnergy(evt)
-        evt_dict['ebm_l3'] = det_ebm.raw.ebeamL3Energy(evt)
-        evt_dict['las_t'] = det_las_t(evt)
-        evt_dict['las_d'] = det_las_d(evt)
-        if evt_dict['las_d'] == None or evt_dict['gmd'] == None or evt_dict['xgmd'] == None:
-            continue
-        evt_dict['gmd'] = evt_dict['gmd']*1000
-        evt_dict['xgmd'] = evt_dict['xgmd']*1000            
+        evt_dict['evt'] = np.array(det_evt.raw.eventcodes(evt),dtype=int) #Event code
+        #evt_dict['gmd'] = det_gmd.raw.energy(evt)#
+        #evt_dict['xgmd'] = det_xgmd.raw.energy(evt)
+        #evt_dict['pho'] = det_ebm.raw.ebeamPhotonEnergy(evt)
+        #evt_dict['ebm_l3'] = det_ebm.raw.ebeamL3Energy(evt)
+        #evt_dict['las_t'] = det_las_t(evt)
+        #evt_dict['las_d'] = det_las_d(evt)
+        #if evt_dict['las_d'] == None or evt_dict['gmd'] == None or evt_dict['xgmd'] == None:
+        #    continue
+        #evt_dict['gmd'] = evt_dict['gmd']*1000
+        #evt_dict['xgmd'] = evt_dict['xgmd']*1000            
 
-        if evt_dict['las_t'] == None:
-            evt_dict['las_t'] = np.nan   
-            
+        #if evt_dict['las_t'] == None:
+        #    evt_dict['las_t'] = np.nan   
+        #print('b:',nevt)    
         ##Ion data
         wfs = hsd.raw.waveforms(evt)
         if wfs is None:
             continue
-        wf_mcp = wfs[0][0].astype(np.float)
+        wf_mcp = wfs[0][0].astype(float)
         
         if ts is None:
             ts = np.arange(0,len(wf_mcp))*0.167
@@ -92,8 +93,10 @@ for myrun in ds.runs():
         pks,prop = find_peaks(wf_mcp, prominence = 20)
         
         npks = min(len(pks),maxNumPks)
+        
+        
         tpks[:npks] = ts[pks][:npks]
-        hpks[:npks] = prop[:npks]
+        hpks[:npks] = prop['prominences'][:npks]
 
         evt_dict['n_pks'] = npks
         evt_dict['t_pks'] = tpks
@@ -127,8 +130,8 @@ for myrun in ds.runs():
         wf0[pks] = wf0[pks] + prop['prominences']
         
         npks_p = min(len(pks),maxNumPks)
-        tpks_p[:npks] = ts[pks][:npks]
-        hpks_p[:npks] = prop[:npks]
+        tpks_p[:npks_p] = ts_p[pks][:npks_p]
+        hpks_p[:npks_p] = prop['prominences'][:npks_p]
         
         evt_dict['n_pks_padded'] = npks_p
         evt_dict['t_pks_padded'] = tpks_p
