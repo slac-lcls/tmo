@@ -1,0 +1,1293 @@
+{
+  "connects": [
+    [
+      "las_fs14_target_time_dial",
+      "Out",
+      "PythonEditor.3",
+      "In.1"
+    ],
+    [
+      "las_fs14_target_time_dial",
+      "Out",
+      "Binning.0",
+      "In"
+    ],
+    [
+      "las_fs14_target_time_dial",
+      "Out",
+      "ScalarViewer.0",
+      "In"
+    ],
+    [
+      "timing:raw:eventcodes",
+      "Out",
+      "PythonEditor.3",
+      "In"
+    ],
+    [
+      "hsd:raw:waveforms:0:0",
+      "Out",
+      "PythonEditor.3",
+      "In.2"
+    ],
+    [
+      "Binning.0",
+      "Bins",
+      "Histogram.0",
+      "Bins"
+    ],
+    [
+      "Binning.0",
+      "Counts",
+      "Histogram.0",
+      "Counts"
+    ],
+    [
+      "PythonEditor.3",
+      "Out",
+      "PickN.0",
+      "In"
+    ],
+    [
+      "PickN.0",
+      "Out",
+      "PythonEditor.0",
+      "In"
+    ],
+    [
+      "PythonEditor.0",
+      "Out",
+      "Histogram2D.0",
+      "XBins"
+    ],
+    [
+      "PythonEditor.0",
+      "Out.1",
+      "Histogram2D.0",
+      "YBins"
+    ],
+    [
+      "PythonEditor.0",
+      "Out.2",
+      "Histogram2D.0",
+      "Counts"
+    ],
+    [
+      "PythonEditor.0",
+      "Out",
+      "PythonEditor.1",
+      "In"
+    ],
+    [
+      "PythonEditor.0",
+      "Out.1",
+      "PythonEditor.1",
+      "In.1"
+    ],
+    [
+      "PythonEditor.0",
+      "Out.2",
+      "PythonEditor.1",
+      "In.2"
+    ],
+    [
+      "PythonEditor.1",
+      "Out",
+      "LinePlot.0",
+      "X"
+    ],
+    [
+      "PythonEditor.1",
+      "Out.1",
+      "LinePlot.0",
+      "Y"
+    ],
+    [
+      "hsd:raw:padded:0:0",
+      "Out",
+      "Average1D.0",
+      "In"
+    ],
+    [
+      "Average1D.0",
+      "Out",
+      "WaveformViewer.0",
+      "In"
+    ]
+  ],
+  "library": {
+    "paths": []
+  },
+  "nodes": [
+    {
+      "class": "SourceNode",
+      "name": "las_fs14_target_time_dial",
+      "state": {
+        "enabled": true,
+        "pos": [
+          100.0,
+          300.0
+        ],
+        "terminals": {
+          "Out": {
+            "group": null,
+            "io": "out",
+            "optional": false,
+            "removable": false,
+            "ttype": "float"
+          }
+        },
+        "viewed": false
+      }
+    },
+    {
+      "class": "SourceNode",
+      "name": "timing:raw:eventcodes",
+      "state": {
+        "enabled": true,
+        "geometry": "01d9d0cb0003000000000000000000140000031f0000033300000000000000140000031f00000333000000000000000005a000000000000000140000031f00000333",
+        "pos": [
+          100.0,
+          200.0
+        ],
+        "terminals": {
+          "Out": {
+            "group": null,
+            "io": "out",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array1d"
+          }
+        },
+        "viewed": false,
+        "widget": {
+          "ctrl": {
+            "Show Grid": true,
+            "Title": "",
+            "X Axis": {
+              "Label": "",
+              "Log Scale": false
+            },
+            "Y Axis": {
+              "Label": "",
+              "Log Scale": false
+            },
+            "trace.0": "timing:raw:eventcodes"
+          },
+          "legend": {
+            "trace.0": [
+              "timing:raw:eventcodes",
+              "timing:raw:eventcodes",
+              {
+                "Line": {
+                  "color": [
+                    255,
+                    255,
+                    255,
+                    255
+                  ],
+                  "style": "Solid",
+                  "width": 1
+                },
+                "Point": {
+                  "Brush": [
+                    0,
+                    0,
+                    255,
+                    255
+                  ],
+                  "Size": 14,
+                  "symbol": "None"
+                }
+              }
+            ]
+          },
+          "viewbox": {
+            "aspectLocked": false,
+            "autoPan": [
+              false,
+              false
+            ],
+            "autoRange": [
+              true,
+              true
+            ],
+            "autoVisibleOnly": [
+              false,
+              false
+            ],
+            "background": null,
+            "enableMenu": false,
+            "limits": {
+              "xLimits": [
+                null,
+                null
+              ],
+              "xRange": [
+                null,
+                null
+              ],
+              "yLimits": [
+                null,
+                null
+              ],
+              "yRange": [
+                null,
+                null
+              ]
+            },
+            "linkedViews": [
+              null,
+              null
+            ],
+            "mouseEnabled": [
+              true,
+              true
+            ],
+            "mouseMode": 3,
+            "targetRange": [
+              [
+                -9.543551878273155,
+                264.54355187827315
+              ],
+              [
+                -0.03732239197531095,
+                1.037322391975311
+              ]
+            ],
+            "viewRange": [
+              [
+                -9.543551878273155,
+                264.54355187827315
+              ],
+              [
+                -0.03732239197531095,
+                1.037322391975311
+              ]
+            ],
+            "wheelScaleFactor": -0.125,
+            "xInverted": false,
+            "yInverted": false
+          }
+        }
+      }
+    },
+    {
+      "class": "SourceNode",
+      "name": "hsd:raw:waveforms:0:0",
+      "state": {
+        "enabled": true,
+        "geometry": "01d9d0cb00030000000008af0000090f00000bce00000c53000008af0000093400000bce00000c5300000000000000000f00000008af0000093400000bce00000c53",
+        "pos": [
+          100.0,
+          400.0
+        ],
+        "terminals": {
+          "Out": {
+            "group": null,
+            "io": "out",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array1d"
+          }
+        },
+        "viewed": true,
+        "widget": {
+          "ctrl": {
+            "Show Grid": true,
+            "Title": "",
+            "X Axis": {
+              "Label": "",
+              "Log Scale": false
+            },
+            "Y Axis": {
+              "Label": "",
+              "Log Scale": false
+            },
+            "trace.0": "hsd:raw:waveforms:0:0"
+          },
+          "legend": {
+            "trace.0": [
+              "hsd:raw:waveforms:0:0",
+              "hsd:raw:waveforms:0:0",
+              {
+                "Line": {
+                  "color": [
+                    255,
+                    0,
+                    0,
+                    255
+                  ],
+                  "style": "Solid",
+                  "width": 1
+                },
+                "Point": {
+                  "Brush": [
+                    0,
+                    0,
+                    255,
+                    255
+                  ],
+                  "Size": 14,
+                  "symbol": "None"
+                }
+              }
+            ]
+          },
+          "viewbox": {
+            "aspectLocked": false,
+            "autoPan": [
+              false,
+              false
+            ],
+            "autoRange": [
+              true,
+              true
+            ],
+            "autoVisibleOnly": [
+              false,
+              false
+            ],
+            "background": null,
+            "enableMenu": false,
+            "limits": {
+              "xLimits": [
+                null,
+                null
+              ],
+              "xRange": [
+                null,
+                null
+              ],
+              "yLimits": [
+                null,
+                null
+              ],
+              "yRange": [
+                null,
+                null
+              ]
+            },
+            "linkedViews": [
+              null,
+              null
+            ],
+            "mouseEnabled": [
+              true,
+              true
+            ],
+            "mouseMode": 3,
+            "targetRange": [
+              [
+                -5049.894209355105,
+                135768.89420935512
+              ],
+              [
+                1424.0040881545826,
+                2147.9959118454176
+              ]
+            ],
+            "viewRange": [
+              [
+                -5049.894209355105,
+                135768.89420935512
+              ],
+              [
+                1424.0040881545826,
+                2147.9959118454176
+              ]
+            ],
+            "wheelScaleFactor": -0.125,
+            "xInverted": false,
+            "yInverted": false
+          }
+        }
+      }
+    },
+    {
+      "class": "ScalarViewer",
+      "name": "ScalarViewer.0",
+      "state": {
+        "enabled": true,
+        "geometry": "01d9d0cb000300000000012b000009280000044a00000c6c0000012b0000094d0000044a00000c6c00000000000000000f000000012b0000094d0000044a00000c6c",
+        "pos": [
+          100.0,
+          -100.0
+        ],
+        "terminals": {
+          "In": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": false,
+            "ttype": "float"
+          }
+        },
+        "viewed": true
+      }
+    },
+    {
+      "class": "Binning",
+      "name": "Binning.0",
+      "state": {
+        "ctrl": {
+          "auto range": false,
+          "bins": 500,
+          "density": false,
+          "range max": 1.5,
+          "range min": -1.5,
+          "weighted": false
+        },
+        "enabled": true,
+        "geometry": "01d9d0cb0003000000000f2d000008c00000124c00000c0400000f2d000008e50000124c00000c0400000000000000000f0000000f2d000008e50000124c00000c04",
+        "pos": [
+          300.0,
+          0.0
+        ],
+        "terminals": {
+          "Bins": {
+            "group": null,
+            "io": "out",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array1d"
+          },
+          "Counts": {
+            "group": null,
+            "io": "out",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array1d"
+          },
+          "In": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": false,
+            "ttype": "typing.Union[float, amitypes.array.Array1d]"
+          }
+        },
+        "viewed": false
+      }
+    },
+    {
+      "class": "Histogram",
+      "name": "Histogram.0",
+      "state": {
+        "enabled": true,
+        "geometry": "01d9d0cb000300000000044b000009300000076a00000c740000044b000009550000076a00000c7400000000000000000f000000044b000009550000076a00000c74",
+        "pos": [
+          500.0,
+          0.0
+        ],
+        "terminals": {
+          "Bins": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array1d"
+          },
+          "Counts": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array1d"
+          }
+        },
+        "viewed": true,
+        "widget": {
+          "ctrl": {
+            "Show Grid": true,
+            "Title": "Laser timing histogram",
+            "X Axis": {
+              "Label": "",
+              "Log Scale": false
+            },
+            "Y Axis": {
+              "Label": "",
+              "Log Scale": false
+            },
+            "trace.0": "Binning.0.Counts"
+          },
+          "legend": {
+            "trace.0": [
+              "Binning.0.Counts",
+              "Binning.0.Counts",
+              {
+                "brush": [
+                  0,
+                  170,
+                  0,
+                  255
+                ]
+              }
+            ]
+          },
+          "viewbox": {
+            "aspectLocked": false,
+            "autoPan": [
+              false,
+              false
+            ],
+            "autoRange": [
+              1.0,
+              1.0
+            ],
+            "autoVisibleOnly": [
+              false,
+              false
+            ],
+            "background": null,
+            "enableMenu": false,
+            "limits": {
+              "xLimits": [
+                null,
+                null
+              ],
+              "xRange": [
+                null,
+                null
+              ],
+              "yLimits": [
+                null,
+                null
+              ],
+              "yRange": [
+                null,
+                null
+              ]
+            },
+            "linkedViews": [
+              null,
+              null
+            ],
+            "mouseEnabled": [
+              true,
+              true
+            ],
+            "mouseMode": 3,
+            "targetRange": [
+              [
+                -1.6151009119649062,
+                1.6151009119649062
+              ],
+              [
+                -28.877358838114002,
+                758.877358838114
+              ]
+            ],
+            "viewRange": [
+              [
+                -1.6151009119649062,
+                1.6151009119649062
+              ],
+              [
+                -28.877358838114002,
+                758.877358838114
+              ]
+            ],
+            "wheelScaleFactor": -0.125,
+            "xInverted": false,
+            "yInverted": false
+          }
+        }
+      }
+    },
+    {
+      "class": "PythonEditor",
+      "name": "PythonEditor.3",
+      "state": {
+        "enabled": true,
+        "geometry": "01d9d0cb00030000000000870000091a000003a600000c5e000000870000093f000003a600000c5e00000000000000000f00000000870000093f000003a600000c5e",
+        "pos": [
+          600.0,
+          300.0
+        ],
+        "terminals": {
+          "In": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": false,
+            "ttype": "typing.Any"
+          },
+          "In.1": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": true,
+            "ttype": "typing.Any"
+          },
+          "In.2": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": true,
+            "ttype": "typing.Any"
+          },
+          "Out": {
+            "group": null,
+            "io": "out",
+            "optional": false,
+            "removable": false,
+            "ttype": "typing.Any"
+          }
+        },
+        "viewed": false,
+        "widget": {
+          "text": "import numpy as np\nfrom scipy.signal import find_peaks\n\nglobal ecd,ts\n\necd = {'sig':[67,1],'ref':[68,1] }\nts = None\n\ndef rebin1dx(arr,factor):\n    if factor == 1:\n        return arr\n    as1 = len(arr)\n    s1 = as1 - (as1%factor) + factor    \n    newarr = np.zeros((s1,))\n#    arrX = arrX[:l//factor*factor]    \n    newarr[:as1] = arr\n    sh = int(s1/factor),factor\n    return np.mean(newarr.reshape(sh),axis=-1)[:-1]\n    \n    \ndef rebin1d(arr,factor):\n    if factor == 1:\n        return arr    \n    as1 = len(arr)\n    s1 = as1 - (as1%factor) + factor    \n    newarr = np.zeros((s1,))\n#    arrX = arrX[:l//factor*factor]    \n    newarr[:as1] = arr\n    sh = int(s1/factor),factor\n    return np.sum(newarr.reshape(sh),axis=-1)[:-1]\n\n# entry point must be called func\ndef func(timing_raw_eventcodes, las_fs14_target_time_dial, hsd_raw_waveforms_0_0, *args, **kwargs):\n\n    global ecd,ts\n    \n    scanx = las_fs14_target_time_dial\n    \n    if timing_raw_eventcodes[161] == 1 and 161 not in [ecd['sig'][0],ecd['ref'][0]]:\n        return {}\n    if timing_raw_eventcodes[ecd['sig'][0]] == ecd['sig'][1]:\n        gs = 'sig'\n      \n    elif timing_raw_eventcodes[ecd['ref'][0]] == ecd['ref'][1]:\n        gs = 'ref'\n        \n    else:\n        return {}\n \n    rbf = 200\n    scany0 = hsd_raw_waveforms_0_0\n    if ts is None:\n        ts = np.arange(0,len(scany0),200)\n    scany0 = -(scany0-scany0[-50:].mean())\n    pks,prop = find_peaks(scany0,prominence=20)\n    \n    scany,_ = np.histogram(pks,bins=ts,weights=prop['prominences'])\n        \n    return {'gs':gs,'scanx0':ts[1:],'scanx':scanx,'scany':scany}\n    \n    \n    \n    "
+        }
+      }
+    },
+    {
+      "class": "PickN",
+      "name": "PickN.0",
+      "state": {
+        "ctrl": {
+          "N": 110
+        },
+        "enabled": true,
+        "geometry": "01d9d0cb0003000000000000000000000000031f0000031f00000000000000000000031f0000031f0000000000000000078000000000000000000000031f0000031f",
+        "pos": [
+          800.0,
+          400.0
+        ],
+        "terminals": {
+          "In": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.T"
+          },
+          "Out": {
+            "group": null,
+            "io": "out",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array1d"
+          }
+        },
+        "viewed": false
+      }
+    },
+    {
+      "class": "PythonEditor",
+      "name": "PythonEditor.0",
+      "state": {
+        "enabled": true,
+        "geometry": "01d9d0cb0003000000000000000000000000077f0000040900000000000000000000077f000004090000000002000000078000000000000000000000077f00000409",
+        "pos": [
+          1000.0,
+          400.0
+        ],
+        "terminals": {
+          "In": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": false,
+            "ttype": "typing.Any"
+          },
+          "Out": {
+            "group": null,
+            "io": "out",
+            "optional": false,
+            "removable": false,
+            "ttype": "typing.Any"
+          },
+          "Out.1": {
+            "group": null,
+            "io": "out",
+            "optional": false,
+            "removable": true,
+            "ttype": "typing.Any"
+          },
+          "Out.2": {
+            "group": null,
+            "io": "out",
+            "optional": false,
+            "removable": true,
+            "ttype": "typing.Any"
+          }
+        },
+        "viewed": false,
+        "widget": {
+          "text": "import numpy as np\nglobal n,avg,scand,xx,yy,zz,ecd\n\nn = {'sig':{},'ref':{}}\navg = {'sig':{},'ref':{}}\nscand = {}\n\nxx = np.array([])\nyy = np.array([])\nzz = np.array([])\n\n# entry point must be called func\ndef func(PickN_0_Out, *args, **kwargs):\n    global n,avg,scand,xx,yy,zz\n    \n    for i, itm in enumerate(PickN_0_Out):\n        if not itm:\n            continue\n        \n\n        gs = itm['gs']\n        \n        if len(yy) == 0:\n            yy = itm['scanx0']*0.167e-3\n    \n        if itm['scanx'] not in avg[gs].keys():\n            avg[gs][itm['scanx']] = np.zeros_like(itm['scany'],dtype=np.float)\n            n[gs][itm['scanx']] = 0     \n\n        n[gs][itm['scanx']] += 1\n        avg[gs][itm['scanx']] += ((itm['scany']-avg[gs][itm['scanx']])\n                                              /n[gs][itm['scanx']])\n\n    \n    for j, k1 in enumerate(avg['sig'].keys()):\n        if k1 in avg['ref'].keys():\n            scand[k1] = (avg['sig'][k1] - avg['ref'][k1])\n    try:\n        scan2 = np.array(list(scand.items()),dtype='object')\n        scan2 = scan2[scan2[:,0].argsort()]\n        xx = scan2[:,0].astype(np.float)  \n\n        zz = np.array([scan2[:,1][i] for i in range(len(scan2[:,1]))])\n    except Exception as err:\n\n        return xx,yy,zz\n    #print(yy)\n    # return 2 output(s)\n    return xx,yy,zz"
+        }
+      }
+    },
+    {
+      "class": "Histogram2D",
+      "name": "Histogram2D.0",
+      "state": {
+        "enabled": true,
+        "geometry": "01d9d0cb000300000000058e000008ff000008ad00000c420000058e00000924000008ad00000c4200000000000000000f000000058e00000924000008ad00000c42",
+        "pos": [
+          1200.0,
+          400.0
+        ],
+        "terminals": {
+          "Counts": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array2d"
+          },
+          "XBins": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array1d"
+          },
+          "YBins": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array1d"
+          }
+        },
+        "viewed": true,
+        "widget": {
+          "ctrl": {
+            "Histogram": {
+              "Auto Levels": false,
+              "Auto Range": false,
+              "Log Scale": false
+            },
+            "Show Grid": true,
+            "Title": "Waveform vs. Laser Time Delay Dial",
+            "X Axis": {
+              "Label": "Laser time delay dial (ns)",
+              "Log Scale": false
+            },
+            "Y Axis": {
+              "Label": "Time of flight (microsecond)",
+              "Log Scale": false
+            }
+          },
+          "histogramLUT": {
+            "gradient": {
+              "mode": "rgb",
+              "ticks": [
+                [
+                  0.2,
+                  [
+                    7,
+                    0,
+                    220,
+                    255
+                  ]
+                ],
+                [
+                  0.5,
+                  [
+                    236,
+                    0,
+                    134,
+                    255
+                  ]
+                ],
+                [
+                  0.8,
+                  [
+                    246,
+                    246,
+                    0,
+                    255
+                  ]
+                ],
+                [
+                  1.0,
+                  [
+                    255,
+                    255,
+                    255,
+                    255
+                  ]
+                ],
+                [
+                  0.0,
+                  [
+                    0,
+                    0,
+                    0,
+                    255
+                  ]
+                ]
+              ],
+              "ticksVisible": true
+            },
+            "levels": [
+              -83.26415379001946,
+              34.485159808861226
+            ],
+            "mode": "mono"
+          },
+          "viewbox": {
+            "aspectLocked": false,
+            "autoPan": [
+              false,
+              false
+            ],
+            "autoRange": [
+              false,
+              false
+            ],
+            "autoVisibleOnly": [
+              false,
+              false
+            ],
+            "background": null,
+            "enableMenu": false,
+            "limits": {
+              "xLimits": [
+                null,
+                null
+              ],
+              "xRange": [
+                null,
+                null
+              ],
+              "yLimits": [
+                null,
+                null
+              ],
+              "yRange": [
+                null,
+                null
+              ]
+            },
+            "linkedViews": [
+              null,
+              null
+            ],
+            "mouseEnabled": [
+              true,
+              true
+            ],
+            "mouseMode": 3,
+            "targetRange": [
+              [
+                -2.0018568319932184,
+                1.634207255769046
+              ],
+              [
+                0.35761521152743114,
+                23.834638439856736
+              ]
+            ],
+            "viewRange": [
+              [
+                -2.0018568319932184,
+                1.634207255769046
+              ],
+              [
+                0.35761521152743114,
+                23.834638439856736
+              ]
+            ],
+            "wheelScaleFactor": -0.125,
+            "xInverted": false,
+            "yInverted": false
+          }
+        }
+      }
+    },
+    {
+      "class": "PythonEditor",
+      "name": "PythonEditor.1",
+      "state": {
+        "enabled": true,
+        "geometry": "01d9d0cb00030000000000a4000000b8000003c3000003db000000a4000000b8000003c3000003db00000000000000000780000000a4000000b8000003c3000003db",
+        "pos": [
+          1200.0,
+          200.0
+        ],
+        "terminals": {
+          "In": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": false,
+            "ttype": "typing.Any"
+          },
+          "In.1": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": true,
+            "ttype": "typing.Any"
+          },
+          "In.2": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": true,
+            "ttype": "typing.Any"
+          },
+          "Out": {
+            "group": null,
+            "io": "out",
+            "optional": false,
+            "removable": false,
+            "ttype": "typing.Any"
+          },
+          "Out.1": {
+            "group": null,
+            "io": "out",
+            "optional": false,
+            "removable": true,
+            "ttype": "typing.Any"
+          }
+        },
+        "viewed": false,
+        "widget": {
+          "text": "\n\n# entry point must be called func\ndef func(PythonEditor_0_Out, PythonEditor_0_Out_1, PythonEditor_0_Out_2, *args, **kwargs):\n    \n    inds = (PythonEditor_0_Out_1>2.47)&(PythonEditor_0_Out_1<2.85)\n    # return 2 output(s)\n    return PythonEditor_0_Out,PythonEditor_0_Out_2[:,inds].sum(1)"
+        }
+      }
+    },
+    {
+      "class": "LinePlot",
+      "name": "LinePlot.0",
+      "state": {
+        "enabled": true,
+        "geometry": "01d9d0cb00030000000003a7000008fe000006c600000c42000003a700000923000006c600000c4200000000000000000f00000003a700000923000006c600000c42",
+        "pos": [
+          1400.0,
+          200.0
+        ],
+        "terminals": {
+          "X": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array1d"
+          },
+          "Y": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array1d"
+          }
+        },
+        "viewed": true,
+        "widget": {
+          "ctrl": {
+            "Show Grid": true,
+            "Title": "Integrated Peak Height vs. Laser Time Delay Dial",
+            "X Axis": {
+              "Label": "Laser time delay dial (ns)",
+              "Log Scale": false
+            },
+            "Y Axis": {
+              "Label": "Integrated peak height",
+              "Log Scale": false
+            },
+            "trace.0": "PythonEditor.1.Out.1 vs PythonEditor.1.Out"
+          },
+          "legend": {
+            "trace.0": [
+              "PythonEditor.1.Out.1 vs PythonEditor.1.Out",
+              "PythonEditor.1.Out.1 vs PythonEditor.1.Out",
+              {
+                "Line": {
+                  "color": [
+                    85,
+                    255,
+                    127,
+                    255
+                  ],
+                  "style": "Solid",
+                  "width": 1
+                },
+                "Point": {
+                  "Brush": [
+                    255,
+                    0,
+                    0,
+                    255
+                  ],
+                  "Size": 14,
+                  "symbol": "None"
+                }
+              }
+            ]
+          },
+          "viewbox": {
+            "aspectLocked": false,
+            "autoPan": [
+              false,
+              false
+            ],
+            "autoRange": [
+              true,
+              1.0
+            ],
+            "autoVisibleOnly": [
+              false,
+              false
+            ],
+            "background": null,
+            "enableMenu": false,
+            "limits": {
+              "xLimits": [
+                null,
+                null
+              ],
+              "xRange": [
+                null,
+                null
+              ],
+              "yLimits": [
+                null,
+                null
+              ],
+              "yRange": [
+                null,
+                null
+              ]
+            },
+            "linkedViews": [
+              null,
+              null
+            ],
+            "mouseEnabled": [
+              true,
+              true
+            ],
+            "mouseMode": 3,
+            "targetRange": [
+              [
+                -3.1149884515695545,
+                0.1149884515695545
+              ],
+              [
+                -111.2693502557988,
+                197.79605199340747
+              ]
+            ],
+            "viewRange": [
+              [
+                -3.1149884515695545,
+                0.1149884515695545
+              ],
+              [
+                -111.2693502557988,
+                197.79605199340747
+              ]
+            ],
+            "wheelScaleFactor": -0.125,
+            "xInverted": false,
+            "yInverted": false
+          }
+        }
+      }
+    },
+    {
+      "class": "SourceNode",
+      "name": "hsd:raw:padded:0:0",
+      "state": {
+        "enabled": true,
+        "pos": [
+          400.0,
+          -500.0
+        ],
+        "terminals": {
+          "Out": {
+            "group": null,
+            "io": "out",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array1d"
+          }
+        },
+        "viewed": false
+      }
+    },
+    {
+      "class": "Average1D",
+      "name": "Average1D.0",
+      "state": {
+        "ctrl": {
+          "N": 2,
+          "axis": 0,
+          "infinite": true
+        },
+        "enabled": true,
+        "geometry": "01d9d0cb00030000000000870000091a000003a600000c5e000000870000093f000003a600000c5e00000000000000000f00000000870000093f000003a600000c5e",
+        "pos": [
+          700.0,
+          -500.0
+        ],
+        "terminals": {
+          "In": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array1d"
+          },
+          "Out": {
+            "group": null,
+            "io": "out",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array1d"
+          }
+        },
+        "viewed": false
+      }
+    },
+    {
+      "class": "WaveformViewer",
+      "name": "WaveformViewer.0",
+      "state": {
+        "enabled": true,
+        "geometry": "01d9d0cb000300000000060f00000c5600000ac300000f9a0000060f00000c7b00000ac300000f9a00000000000000000f000000060f00000c7b00000ac300000f9a",
+        "pos": [
+          1100.0,
+          -500.0
+        ],
+        "terminals": {
+          "In": {
+            "group": null,
+            "io": "in",
+            "optional": false,
+            "removable": false,
+            "ttype": "amitypes.array.Array1d"
+          }
+        },
+        "viewed": true,
+        "widget": {
+          "ctrl": {
+            "Show Grid": true,
+            "Title": "",
+            "X Axis": {
+              "Label": "",
+              "Log Scale": false
+            },
+            "Y Axis": {
+              "Label": "",
+              "Log Scale": false
+            },
+            "trace.0": "Average1D.0.Out"
+          },
+          "legend": {
+            "trace.0": [
+              "Average1D.0.Out",
+              "Average1D.0.Out",
+              {
+                "Line": {
+                  "color": [
+                    255,
+                    0,
+                    0,
+                    255
+                  ],
+                  "style": "Solid",
+                  "width": 1
+                },
+                "Point": {
+                  "Brush": [
+                    0,
+                    0,
+                    255,
+                    255
+                  ],
+                  "Size": 14,
+                  "symbol": "None"
+                }
+              }
+            ]
+          },
+          "viewbox": {
+            "aspectLocked": false,
+            "autoPan": [
+              false,
+              false
+            ],
+            "autoRange": [
+              false,
+              false
+            ],
+            "autoVisibleOnly": [
+              false,
+              false
+            ],
+            "background": null,
+            "enableMenu": false,
+            "limits": {
+              "xLimits": [
+                null,
+                null
+              ],
+              "xRange": [
+                null,
+                null
+              ],
+              "yLimits": [
+                null,
+                null
+              ],
+              "yRange": [
+                null,
+                null
+              ]
+            },
+            "linkedViews": [
+              null,
+              null
+            ],
+            "mouseEnabled": [
+              true,
+              true
+            ],
+            "mouseMode": 3,
+            "targetRange": [
+              [
+                -94518.50984948652,
+                292304.2918981713
+              ],
+              [
+                2015.2178085575015,
+                2055.551163155457
+              ]
+            ],
+            "viewRange": [
+              [
+                -94518.50984948652,
+                292304.2918981713
+              ],
+              [
+                2015.2178085575015,
+                2055.551163155457
+              ]
+            ],
+            "wheelScaleFactor": -0.125,
+            "xInverted": false,
+            "yInverted": false
+          }
+        }
+      }
+    }
+  ],
+  "source_configuration": {
+    "files": [],
+    "hb_period": 10,
+    "init_time": 0.5,
+    "interval": 0.01,
+    "repeat": false,
+    "type": "hdf5"
+  },
+  "viewbox": {
+    "comments": []
+  }
+}
