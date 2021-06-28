@@ -27,9 +27,6 @@ params['hdf5'] = params['hdf5']+str(params['run_num'])+'.h5'
 if os.path.isfile(params['hdf5']):
     os.remove(params['hdf5'])
 
-        
-tst1 = 0
-
 if 'max_evt' in params.keys():
     ds = DataSource(exp=params['exp'],run=params['run_num'],max_events=params['max_evt']) 
 else:
@@ -53,10 +50,6 @@ for myrun in ds.runs():
 
     evt_dict = {}
     sevt_dict = {}
-    test_dict = {}
-
-    tst2 = 0
-    tst3 = 0 
 
 
     sinit=None
@@ -95,7 +88,6 @@ for myrun in ds.runs():
         wf0[pks] = wf0[pks] + prop['prominences']
 
         if sinit==None:
-            test_dict['67'] = 0
             sinit = 1
         if evt_dict['las_d'] not in las_d:
             sevt_dict[str(evt_dict['las_d'])] = {}
@@ -104,13 +96,8 @@ for myrun in ds.runs():
                 sevt_dict[str(evt_dict['las_d'])][nm] = np.zeros_like(wf_mcp) 
             sevt_dict[str(evt_dict['las_d'])]['67'] = 0
             sevt_dict[str(evt_dict['las_d'])]['68'] = 0
-
-        test_dict['67'] += 1.0
-        tst1 += 1
-        if evt_dict['evt'][161]==0 and evt_dict['xgmd']>5:
-            tst2+=1
+        if evt_dict['evt'][161]==0 and evt_dict['xgmd']>5:           
             if evt_dict['evt'][67]==1:
-                tst3 += 1
                 sevt_dict[str(evt_dict['las_d'])]['67'] += 1.0
                 sevt_dict[str(evt_dict['las_d'])]['tof_67'] += wf_mcp
                 sevt_dict[str(evt_dict['las_d'])]['tof_67n'] += wf_mcp/evt_dict['xgmd']
@@ -124,25 +111,17 @@ for myrun in ds.runs():
                 sevt_dict[str(evt_dict['las_d'])]['ptof_68n'] += wf0/evt_dict['xgmd']
 
         smd.event(evt, evt_dict)                
-
-
-
         print('Event Num:',nevt) 
 
-    print('pre_sum,rank:',params['rank'])
     if smd.summary:
+        smd_dict = {}
         for ld in las_d:
+            smd_dict[ld] = {}
             for nm in ['67','68','tof_67','tof_68','tof_67n','tof_68n','ptof_67','ptof_68','ptof_67n','ptof_68n']:
-                smd.sum(sevt_dict[str(ld)][nm])
-        smd.sum(test_dict['67'])  
-        smd.sum(tst1) 
-        smd.sum(tst2) 
-        smd.sum(tst3) 
-        print('sum1,rank:',params['rank'])
-        smd.save_summary(sevt_dict,test_dict,{'tst1':tst1,'tst2':tst2,'tst3':tst3})
-        print('sum2,rank:',params['rank'])
-    smd.done()    
-    print('end,rank:',rank)
+                smd_dict[ld][nm] = smd.sum(sevt_dict[str(ld)][nm])
+       
+        smd.save_summary(smd_dict)
+    smd.done()   
 
 
 

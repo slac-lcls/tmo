@@ -177,8 +177,10 @@ class PreProc:
                 break    
 
         if smd.summary:
-            smd.sum(sevt_dict['tof'])
-            smd.save_summary({'ion_sum':sevt_dict})
+            smd_dict = {}
+            for k in sevt_dict.keys():
+               smd_dict[k] = smd.sum(sevt_dict[k])
+            smd.save_summary({'smd_dict':smd_dict})
         smd.done()
 
 if __name__ == "__main__":

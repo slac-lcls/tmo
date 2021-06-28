@@ -81,10 +81,11 @@ class PreProc:
    
 
         if smd.summary:
+            smd_dict = {}
             for nm in ['tof','tof_67','tof_68','tof_67n','tof_68n']:
-                smd.sum(sevt_dict[nm])
+                smd_dict[nm] = smd.sum(sevt_dict[nm])
                 
-            smd.save_summary({'sig_sum':sevt_dict})
+            smd.save_summary({'sig_sum':smd_dict})
         smd.done()
 
 if __name__ == "__main__":
